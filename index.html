@@ -74,7 +74,7 @@
 </head>
 <body>
     <header class="container nav-section">
-        <nav class="navbar navbar-expand-lg navbar-light text-dark">
+        <nav id="nav" class="navbar navbar-expand-lg navbar-light text-dark">
             <h5 class="w-25">Cooking Master</h5>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -165,9 +165,13 @@
         const showMeals = (meals) =>{
             // console.log(meals);
             meals.forEach(meal => {
-                const mealDiv = document.createElement("div");
+                const mealDiv = document.createElement("a");
+                // const href = document.createAttribute('href');
+                // href.value = "#nav";
+                // mealDiv.setAttributeNode(href);
+                mealDiv.setAttribute("href", "#nav");
                 mealDiv.id = `${meal.idMeal}`;
-                mealDiv.className = `meal col-md-2 col-sm-6 p-2 card mx-3 my-2`;
+                mealDiv.className = `meal col-md-2 col-sm-6 p-2 card mx-3 my-2 text-decoration-none`;
                 const mealInfo = `
                     <img src="${meal.strMealThumb}" class="rounded" alt="">
                     <div class="bg-light text-center text-muted py-3">${meal.strMeal}</div>
